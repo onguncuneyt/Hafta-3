@@ -1,46 +1,84 @@
-::placeholder {
-    text-align: center;
-    font-size: 14px;
-    color: gray;
-    background-repeat: no-repeat;
-    background-position: 40%;
-    background-size: 6%;
-}
-
-input.empty {
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    background-color: #FAFAFA;
-}
-
+/* Navbar'ı yukarı sabitleme ve body'ye padding verme */
 body {
-    background-color: #FAFAFA;
-    padding-top: 65px;
-    overflow-x: hidden;
+    padding-top: 54px;
+    /* Navbar yüksekliği kadar üst boşluk */
 }
 
-#sticky-sidebar {
+.navbar {
     position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Navbar'ın içerikten üstte kalması için z-index */
+    background-color: white;
+    /* Navbar arkaplan rengi beyaz */
 }
 
+/* Navbar logo class'ına margin verme */
+.navbar-brand {
+    margin-left: 192px;
+    /* Navbar logosuna soldan margin verme */
+}
+
+/* Arama kısmını ortaya alıp margin verme */
+.form-inline {
+    margin-left: 5px;
+    /* Arama kısmına soldan margin verme */
+    display: flex;
+    justify-content: center;
+}
+
+/* Arama simgesini placeholder arka planına ekleme */
+::placeholder {
+    background-image: url('assets/search-solid.svg');
+    /* Arama simgesi ekle */
+    background-repeat: no-repeat;
+    /* Resmin tekrar etmemesi için */
+}
+
+/* Sağ üstteki menü simgesi düzenlemeleri */
+.menu-icon {
+    margin-left: 5px;
+    /* Menü simgesi sola kaydır */
+    margin-top: 2px;
+    /* Menü simgesi yukarı kaydır */
+}
+
+/* Küçük ekranlarda menü simgesinin gizlenmesi */
+@media (max-width: 576px) {
+    .menu-icon {
+        display: none;
+        /* Menü simgesini gizle */
+    }
+}
+
+/* İçerik alanı */
 .middlearea {
-    height: 200px !important;
+    margin-top: 2rem;
+    /* Üstten 2 birim margin */
 }
 
-.postuserfont {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 15px;
-    color: black;
+/* Maksimum yükseklik 200px ve !important ile yazılması */
+.middlearea {
+    max-height: 200px !important;
 }
 
-.card-header {
-    background-color: white;
+/* Grid sistemi */
+.col {
+    flex-basis: 12;
+    /* Normal boyutta 12 */
 }
 
-.card-footer {
-    background-color: white;
+@media (min-width: 576px) {
+    .col-sm {
+        flex-basis: 6;
+        /* Sayfa küçülüp büyüdükçe, boyutuyla oynadıkça, boyutuyla oynadıkça, 6 ölçek */
+    }
+}
+
+/* Hikayeler kısmında isimlerin resimlerin altına gelmesi */
+.storytext {
+    display: block;
 }
 
 .storyphoto {
@@ -51,23 +89,52 @@ body {
     margin-right: 7px;
 }
 
-.storytext {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 12px;
-    color: black;
+/* İçerik kısmında üç nokta sağa alınması */
+.options {
+    text-align: right;
+}
+
+/* Beğenme, yorum yapma, paylaşma kısmında border olmaması */
+.postfooter {
+    border: none;
+}
+
+/* Bookmark ikonunun offset'i */
+.bookmark {
+    margin-left: 7px;
+    /* Offset 7 birim */
+}
+
+/* Card header ve card footer'lar beyaz renk olmalı */
+.card-header,
+.card-footer {
+    background-color: white;
+}
+
+/* Yorum paylaş metninin sağa alınması */
+.share {
+    text-align: right;
+}
+
+/* Sağ panel */
+.stickysidebar {
+    position: sticky;
+    top: 0;
+    padding-top: 54px;
 }
 
 .rightpanel {
-    border: 0;
-    background-color: #FAFAFA;
+    background-color: white;
+    border: none;
 }
 
-.rightpanellinks {
-    text-decoration: none;
-    color: lightgrey;
+/* Tümünü gör ve takip et yazılarının sağa alınması */
+.follow-text {
+    text-align: right;
 }
 
-.rightpanellinks:hover {
-    text-decoration: none;
-    color: lightgrey;
+/* Sayfanın arkaplan rengi Instagram'dan alınması */
+body {
+    background-color: #fafafa;
+    /* Instagram arkaplan rengi */
 }
